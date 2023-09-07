@@ -1,0 +1,20 @@
+#my-extension-input-wrapper {
+
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#my-extension-input {
+    width: 200px;
+}
+
+#my-extension-field {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 9999;
+    /* 最前面に表示 */
+    width: 200px;
+}

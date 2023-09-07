@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "3D Model Salesman Extension",
+    "description": "Displays a 3D model at the bottom right of web page.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "./js/background.js"
+    },
+    "host_permissions": [
+        "*://*.skyland.vc/*",
+        "https://api.openai.com/*",
+        "http://localhost:50021/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.skyland.vc/*"
+            ],
+            "js": [
+                "./dist/bundle.js"
+            ],
+            "css": [
+                "./content/css/content.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "declarativeNetRequest",
+        "activeTab"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "content/model/*"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ]
+}
