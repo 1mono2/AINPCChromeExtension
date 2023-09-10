@@ -1,0 +1,1 @@
+./js/secrets.js: OPENAIのAPIキーを記述する。sample_secrets.jsを参考にする。

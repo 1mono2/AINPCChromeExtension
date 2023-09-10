@@ -1,3 +1,5 @@
 .env
 .vscode
 .vs
+.DS_Store
+./js/secrets.js

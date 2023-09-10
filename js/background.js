@@ -1,4 +1,4 @@
-const OPENAI_APIKEY = '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';
+const OPENAI_APIKEY = window._ENV.OPENAI_APIKEY;
 const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
 const VOICEVOX_API_URL = "http://localhost:50021";
 const VOICEVOX_SPEAKER_ID = 8;
@@ -10,8 +10,25 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 
 
         console.log("Get userPrompt: " + userPrompt);
-        callGPT(userPrompt)
-            .then(responseText => callVoicevox(responseText))
+        // callGPT(userPrompt)
+        //     .then(responseText => callVoicevox(responseText))
+        //     .then(audio => {
+
+        //         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        //             chrome.tabs.sendMessage(tabs[0].id, { type: "responseSendTextToAPI", audio: audio });
+        //         }
+
+        //         );
+        //     })
+        //     .catch(e => {
+        //         console.error('Error occurred:', e);
+        //         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        //             chrome.tabs.sendMessage(tabs[0].id, { type: "responseSendTextToAPI", error: e.message });
+        //         });
+
+        //     });
+
+        callVoicevox(userPrompt)
             .then(audio => {
 
                 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {

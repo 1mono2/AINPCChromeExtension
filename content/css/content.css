@@ -7,13 +7,13 @@
 }
 
 #my-extension-input {
-    width: 200px;
+    width: 50px;
 }
 
 #my-extension-field {
     position: fixed;
     left: 10px;
-    bottom: 10px;
+    top: 10px;
     z-index: 9999;
     /* 最前面に表示 */
     width: 200px;

@@ -10,14 +10,14 @@
         "service_worker": "./js/background.js"
     },
     "host_permissions": [
-        "*://*.skyland.vc/*",
+        "<all_urls>",
         "https://api.openai.com/*",
         "http://localhost:50021/*"
     ],
     "content_scripts": [
         {
             "matches": [
-                "*://*.skyland.vc/*"
+                "<all_urls>"
             ],
             "js": [
                 "./dist/bundle.js"
